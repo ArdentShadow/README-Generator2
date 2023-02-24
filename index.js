@@ -19,7 +19,7 @@ const questions = [
   {
     type: "input",
     name: "link",
-    message: "Please provide a URL where a user can access your deployed application."
+    message: "Paste a URL to where a user can access your deployed application."
   },
   {
     type: "checkbox",

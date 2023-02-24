@@ -1,6 +1,5 @@
 function generateMarkdown(data) {
     return `# ${data.title} 
-  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
   ## Deployed Application URL
@@ -23,6 +22,5 @@ function generateMarkdown(data) {
   ## Contributors
   ${data.contributors}
   ## Testing
-  ${data.test}
 `;
 }
