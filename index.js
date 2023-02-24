@@ -8,18 +8,13 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
   {
     type: "input",
-    name: "title",
+    name: "What is the title of your project?",
     message: "Please name your Project.",
   },
   {
     type: "input",
-    name: "description",
+    name: "Write a description of your project",
     message: "Please describe the purpose and functionality of this project.",
-  },
-  {
-    type: "input",
-    name: "screenshot",
-    message: "Please provide the relative path to the image you want to use as the screenshot."
   },
   {
     type: "input",
@@ -30,7 +25,7 @@ const questions = [
     type: "checkbox",
     name: "license",
     message: "Please select a license applicable to this project.",
-    choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+    choices: ["MIT", "APACHE", "GPlv2", "other", "none"],
   },
   {
     type: "input",
@@ -41,12 +36,6 @@ const questions = [
     type: "input",
     name: "features",
     message: "List some cool features about this project here.",
-  },
-  {
-    type: "input",
-    name: "usage",
-    message:
-      "State the languages or technologies associated with this project.",
   },
   {
     type: "input",
@@ -61,13 +50,8 @@ const questions = [
   {
     type: "input",
     name: "contributors",
-    message: "Please list any contributors. (Use GitHub usernames)",
+    message: "Please list any contributors, please use GitHub names ONLY",
     default: "",
-  },
-  {
-    type: "input",
-    name: "test",
-    message: "Provide walkthrough of required tests if applicable.",
   },
 ];
 
@@ -80,7 +64,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log("Creating Professional README.md File...");
-    writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
+    writeToFile("./DEMO/README.md", generateMarkdown({ ...responses }));
   });
 }
 init();
